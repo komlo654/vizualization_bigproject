@@ -1,0 +1,65 @@
+#tooltip {
+    position: absolute;
+    display: none;
+    background-color: #ff3c3c;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#tooltip .pokemon-details {
+    margin-top: 10px;
+}
+
+/* Axes */
+.axis line {
+    fill: none;
+    stroke: #8693a0;
+    shape-rendering: crispEdges;
+}
+.axis text {
+    font-size: 13px;
+    fill: #6b6b6b;
+}
+.axis-title {
+    font-size: 13px;
+    fill: #888;
+}
+.x-axis .domain {
+    stroke: #8693a0;
+}
+.y-axis .domain {
+    display: none;
+}
+
+.chart-area {
+    fill: #e9eff5;
+}
+.chart-line {
+    fill: none;
+    stroke: #517390;
+    stroke-width: 2px;
+}
+
+.geo-path {
+    fill: #cfdecd;
+}
+.geo-boundary-path {
+    stroke: #fff;
+    fill: none;
+    stroke-width: 0.4;
+}
+.geo-symbol {
+    fill: #3e5e79;
+    fill-opacity: 0.9;
+}
+.geo-symbol:hover {
+    fill-opacity: 1;
+}
+.geo-label {
+    font-size: .7rem;
+    font-weight: 500;
+}
+.geo-visitor-label {
+    font-weight: 700;
+    font-size: .75rem;
+}
