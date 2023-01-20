@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <title>D3 Scatterplot</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/d3/d3.js"></script>
-    <script src="js/classes/barchart.js"></script>
-    <script src="js/classes/scatterplot.js"></script>
-    <script src="js/barchart.js"></script>
-    <script src="js/scatterplot.js"></script>
-
 </head>
 <body>
 <div class="container">
@@ -26,9 +20,40 @@
             <div class="title">Tulajdonságok összehasonlítása</div>
             <svg id="scatter-chart"></svg>
             <div id="scatter-tooltip"></div>
+            <div class="diagram-properties">
+                <div class="block" id="goalkeeper">
+                    <label>Kapus:</label>
+                    <svg height="10px" width="20px">
+                        <circle style="fill: orange" stroke="black" cx=50% cy=50% r=4></circle>
+                    </svg>
+                </div>
+                <div class="block">
+                    <label>Védő:</label>
+                    <svg height="10px" width="20px">
+                        <circle style="fill: yellow" stroke="black" cx=50% cy=50% r=4></circle>
+                    </svg>
+                </div>
+                <div class="block">
+                    <label>Középpályás:</label>
+                    <svg height="10px" width="20px">
+                        <circle style="fill: green" stroke="black" cx=50% cy=50% r=4></circle>
+                    </svg>
+                </div>
+                <div class="block">
+                    <label>Támadó:</label>
+                    <svg height="10px" width="20px">
+                        <circle style="fill: blue" stroke="black" cx=50% cy=50% r=4></circle>
+                    </svg>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
+<script src="js/d3/d3.js"></script>
+<script src="js/classes/barchart.js"></script>
+<script src="js/classes/scatterplot.js"></script>
+<script src="js/barchart.js"></script>
+<script src="js/scatterplot.js"></script>
 </body>
 </html>
