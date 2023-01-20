@@ -101,7 +101,6 @@ class Barchart {
             .join('rect');
 
         bars.style('opacity', 0.5)
-            .transition().duration(1000)
             .style('opacity', 1)
             .attr('class', 'bar')
             .attr('x', d => vis.xScale(vis.xValue(d)))
@@ -127,9 +126,7 @@ class Barchart {
             });
 
         // Update axes
-        vis.xAxisG
-            .transition().duration(1000)
-            .call(vis.xAxis);
+        vis.xAxisG.call(vis.xAxis);
 
         vis.yAxisG.call(vis.yAxis);
     }
