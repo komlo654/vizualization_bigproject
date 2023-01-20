@@ -1,7 +1,3 @@
-/**
- * Load TopoJSON data of the world and the data of the world wonders
- */
-
 Promise.all([
     d3.json('data/world.json'),
     d3.csv('data/stadiums.csv')
@@ -12,7 +8,7 @@ Promise.all([
 
     console.log(data[1])
 
-    const geoMap = new GeoMap({
+    const geoMap = new Geomap({
         parentElement: '#map'
     }, data[0], data[1]);
 })

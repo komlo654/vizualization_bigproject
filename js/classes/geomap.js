@@ -1,4 +1,4 @@
-class GeoMap {
+class Geomap {
 
     /**
      * Class constructor with basic configuration
