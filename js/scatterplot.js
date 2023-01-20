@@ -1,16 +1,10 @@
-d3.csv('data/pokemon.csv')
+d3.csv('data/fifa18.csv')
     .then(data => {
 
-        // Convert strings to numbers
-        data.forEach(d => {
-            d["Attack"] = +d["Attack"];
-            d["HP"] = +d["HP"];
-        });
+        let filtered_data = data.filter(d => d.Stamina !== "")
+        filtered_data = filtered_data.map(d => ({...d, ["Preferred Positions"]: d["Preferred Positions"].split(" ")[0]}))
 
-        // Initialize chart
-        const scatterplot = new Scatterplot({ parentElement: '#chart'}, data);
-
-        // Show chart
+        const scatterplot = new Scatterplot({ parentElement: '#scatter-chart'}, filtered_data.slice(0, 500));
         scatterplot.updateVis();
     })
     .catch(error => console.error(error));

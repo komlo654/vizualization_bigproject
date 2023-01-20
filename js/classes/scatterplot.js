@@ -10,7 +10,7 @@ class Scatterplot {
             parentElement: _config.parentElement,
             containerWidth: _config.containerWidth || 600,
             containerHeight: _config.containerHeight || 400,
-            margin: _config.margin || {top: 25, right: 20, bottom: 20, left: 35},
+            margin: _config.margin || {top: 30, right: 20, bottom: 20, left: 35},
             tooltipPadding: _config.tooltipPadding || 15
         }
         this.data = _data;
@@ -71,14 +71,14 @@ class Scatterplot {
             .attr('x', vis.width + 10)
             .attr('dy', '.71em')
             .style('text-anchor', 'end')
-            .text('HP');
+            .text('Állóképesség');
 
         vis.svg.append('text')
             .attr('class', 'axis-title')
             .attr('x', 0)
-            .attr('y', 0)
+            .attr('y', "5px")
             .attr('dy', '.71em')
-            .text('Attack');
+            .text('Életkor');
     }
 
     /**
@@ -88,12 +88,12 @@ class Scatterplot {
         let vis = this;
 
         // Specificy accessor functions
-        vis.xValue = d => d["HP"];
-        vis.yValue = d => d["Attack"];
+        vis.xValue = d => d["Stamina"];
+        vis.yValue = d => d["Age"];
 
         // Set the scale input domains
         vis.xScale.domain([0, d3.max(vis.data, vis.xValue)]);
-        vis.yScale.domain([0, d3.max(vis.data, vis.yValue)]);
+        vis.yScale.domain([15, d3.max(vis.data, vis.yValue)]);
 
         vis.renderVis();
     }
@@ -110,25 +110,37 @@ class Scatterplot {
             .join('circle')
             .attr('class', 'point')
             .attr('r', 4)
+            .attr("fill", d => {
+                if (d["Preferred Positions"] === "ST" || d["Preferred Positions"] === "RS" || d["Preferred Positions"] === "LS" || d["Preferred Positions"] === "RF" || d["Preferred Positions"] === "LF" || d["Preferred Positions"] === "RW" || d["Preferred Positions"] === "LW" || d["Preferred Positions"] === "CF") {
+                    return "blue";
+                } else if (d["Preferred Positions"] === "RM" || d["Preferred Positions"] === "LM" || d["Preferred Positions"] === "CM" || d["Preferred Positions"] === "CAM" || d["Preferred Positions"] === "CDM" ) {
+                    return "green";
+                } else if (d["Preferred Positions"] === "CB" || d["Preferred Positions"] === "RCB" || d["Preferred Positions"] === "LCB" || d["Preferred Positions"] === "RB" || d["Preferred Positions"] === "LB" || d["Preferred Positions"] === "RWB" || d["Preferred Positions"] === "LWB") {
+                    return "yellow";
+                } else if (d["Preferred Positions"] === "GK") {
+                    return "orange";
+                }
+            })
+            .attr("stroke", "black")
             .attr('cy', d => vis.yScale(vis.yValue(d)))
             .attr('cx', d => vis.xScale(vis.xValue(d)));
 
         // Tooltip event listeners
         circles
             .on('mouseover', (event,d) => {
-                d3.select('#tooltip')
-                    .style('display', 'block')
+                d3.select('#scatter-tooltip')
+                    .style('opacity', '1')
                     .style('left', (event.pageX + vis.config.tooltipPadding) + 'px')
                     .style('top', (event.pageY + vis.config.tooltipPadding) + 'px')
                     .html(`
               <div class="tooltip-title">${d["Name"]}</div>
-              <div class="pokemon-details">
-                <div>${"HP: " + d["HP"]}</div>
-                <div>${"Attack: " + d["Attack"]}</div>
+              <div class="player-details">
+                <div>${"Álóképesség: " + d["Stamina"]}</div>
+                <div>${"Életkor: " + d["Age"]}</div>
             `);
             })
             .on('mouseleave', () => {
-                d3.select('#tooltip').style('display', 'none');
+                d3.select('#scatter-tooltip').style('opacity', '0');
             });
 
         // Update the axes/gridlines
