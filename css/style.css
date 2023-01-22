@@ -100,3 +100,7 @@ h1 {
     line-height: 20px;
 }
 
+.diagram-properties .block.inactive {
+    color: gray;
+}
+

@@ -116,13 +116,13 @@ class Scatterplot {
             .attr('class', 'point')
             .attr('r', 4)
             .attr("fill", d => {
-                if (d["Preferred Positions"] === "ST" || d["Preferred Positions"] === "RS" || d["Preferred Positions"] === "LS" || d["Preferred Positions"] === "RF" || d["Preferred Positions"] === "LF" || d["Preferred Positions"] === "RW" || d["Preferred Positions"] === "LW" || d["Preferred Positions"] === "CF") {
+                if (d["Preferred Positions"] === "attacker") {
                     return "blue";
-                } else if (d["Preferred Positions"] === "RM" || d["Preferred Positions"] === "LM" || d["Preferred Positions"] === "CM" || d["Preferred Positions"] === "CAM" || d["Preferred Positions"] === "CDM" ) {
+                } else if (d["Preferred Positions"] === "midfielder" ) {
                     return "green";
-                } else if (d["Preferred Positions"] === "CB" || d["Preferred Positions"] === "RCB" || d["Preferred Positions"] === "LCB" || d["Preferred Positions"] === "RB" || d["Preferred Positions"] === "LB" || d["Preferred Positions"] === "RWB" || d["Preferred Positions"] === "LWB") {
+                } else if (d["Preferred Positions"] === "defender") {
                     return "yellow";
-                } else if (d["Preferred Positions"] === "GK") {
+                } else if (d["Preferred Positions"] === "goalkeeper") {
                     return "orange";
                 }
             })
