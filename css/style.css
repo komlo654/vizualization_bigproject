@@ -59,14 +59,15 @@ h1 {
 #barchart .bar {
     fill: #023020;
     shape-rendering: crispEdges;
+    transition: fill ease-in-out 200ms;
 }
 #barchart .bar:hover {
     fill: #47685D;
-    transition: fill ease-in-out 200ms;
 }
 
 #barchart-tooltip,
-#scatter-tooltip {
+#scatter-tooltip,
+#stacked-barchart-tooltip {
     position: absolute;
     opacity: 0;
     background: #fff;
@@ -82,7 +83,7 @@ h1 {
     color: #888;
 }
 
-#scatter-tooltip .tooltip-title {
+.tooltip-title {
     color: #888;
 }
 
@@ -91,16 +92,39 @@ h1 {
     text-align: center;
 }
 
-.diagram-properties .block {
+.diagram-properties .block,
+.diagram-properties .role {
     display: inline-block;
 }
 
+.diagram-properties .role label,
 .diagram-properties .block label {
     height: 20px;
     line-height: 20px;
 }
 
+.diagram-properties .role.inactive,
 .diagram-properties .block.inactive {
     color: gray;
 }
 
+.wages-by-age-and-role .cat-goalkeeper rect {
+    fill: orange;
+}
+
+.wages-by-age-and-role .cat-defender rect {
+    fill: yellow;
+}
+
+.wages-by-age-and-role .cat-midfielder rect {
+    fill: green;
+
+}
+
+.wages-by-age-and-role .cat-attacker rect {
+    fill: blue;
+}
+
+#stacked-barchart rect:hover {
+    filter: grayscale(30%);
+}

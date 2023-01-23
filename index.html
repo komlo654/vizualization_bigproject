@@ -47,13 +47,47 @@
                 </div>
             </div>
         </div>
+        <div class="diagram wages-by-age-and-role">
+            <div class="title">Havi átlagjövedelmek összehasonlítása</div>
+            <svg id="stacked-barchart"></svg>
+            <div id="stacked-barchart-tooltip"></div>
+            <div class="diagram-properties">
+                <div class="role" role="goalkeeper">
+                    <label>Kapus:</label>
+                    <svg height="10px" width="20px">
+                        <circle style="fill: orange" stroke="black" cx=50% cy=50% r=4></circle>
+                    </svg>
+                </div>
+                <div class="role" role="defender">
+                    <label>Védő:</label>
+                    <svg height="10px" width="20px">
+                        <circle style="fill: yellow" stroke="black" cx=50% cy=50% r=4></circle>
+                    </svg>
+                </div>
+                <div class="role" role="midfielder">
+                    <label>Középpályás:</label>
+                    <svg height="10px" width="20px">
+                        <circle style="fill: green" stroke="black" cx=50% cy=50% r=4></circle>
+                    </svg>
+                </div>
+                <div class="role" role="attacker">
+                    <label>Támadó:</label>
+                    <svg height="10px" width="20px">
+                        <circle style="fill: blue" stroke="black" cx=50% cy=50% r=4></circle>
+                    </svg>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <script src="js/d3/d3.js"></script>
 <script src="js/classes/barchart.js"></script>
 <script src="js/classes/scatterplot.js"></script>
+<script src="js/classes/stackedBarchart.js"></script>
+<script src="js/functions.js"></script>
 <script src="js/barchart.js"></script>
 <script src="js/scatterplot.js"></script>
+<script src="js/stackedBarchart.js"></script>
 </body>
 </html>
