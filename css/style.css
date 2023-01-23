@@ -125,6 +125,10 @@ h1 {
     fill: blue;
 }
 
+#stacked-barchart rect {
+    transition: filter ease-in-out 200ms;
+}
+
 #stacked-barchart rect:hover {
     filter: grayscale(30%);
 }
