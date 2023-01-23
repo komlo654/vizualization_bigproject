@@ -114,7 +114,7 @@ class Barchart {
                 d3.select('#barchart-tooltip')
                     .style('opacity', 1)
                     // Format number with million and thousand separator
-                    .html(`<div class="barchart-tooltip-label">Market value (€)</div>${d3.format(',')(+d["Value (€)"])}`);
+                    .html(`<div class="barchart-tooltip-label">Piaci érték (€)</div>${d3.format(',')(+d["Value (€)"])}`);
             })
             .on('mousemove', (event) => {
                 d3.select('#barchart-tooltip')
