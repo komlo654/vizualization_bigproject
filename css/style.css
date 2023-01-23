@@ -132,3 +132,18 @@ h1 {
 #stacked-barchart rect:hover {
     filter: grayscale(30%);
 }
+
+.diagram-properties.spider-chart {
+    text-align: left;
+}
+
+.diagram-properties.spider-chart .player {
+    margin-bottom: 10px;
+}
+
+.diagram-properties.spider-chart button {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
