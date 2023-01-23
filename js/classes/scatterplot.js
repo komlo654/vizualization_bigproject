@@ -11,8 +11,7 @@ class Scatterplot {
             containerWidth: _config.containerWidth || 600,
             containerHeight: _config.containerHeight || 400,
             margin: _config.margin || {top: 30, right: 20, bottom: 20, left: 35},
-            tooltipPadding: _config.tooltipPadding || 15,
-            playerRole: _config.playerRole || "default"
+            tooltipPadding: _config.tooltipPadding || 15
         }
         this.data = _data;
         this.initVis();
@@ -87,10 +86,6 @@ class Scatterplot {
      */
     updateVis() {
         let vis = this;
-
-        if (vis.config.playerRole === "goalkeeper") {
-            vis.data = vis.data.filter(d => d["Preferred Positions"] === "GK")
-        }
 
         // Specificy accessor functions
         vis.xValue = d => d["Stamina"];
