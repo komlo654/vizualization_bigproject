@@ -60,7 +60,7 @@ d3.csv('data/fifa18.csv')
         ]
 
         f_data.map(d => {
-            if (d.Age >= 16 && d.Age <= 24) {
+            if (d.Age <= 24) {
                 ++data_info[0][d["Preferred Positions"]].number_of_players
                 data_info[0][d["Preferred Positions"]].total_wage += parseInt(d["Wage (€)"])
             } else if (d.Age >= 25 && d.Age <= 31) {
