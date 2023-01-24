@@ -1,5 +1,6 @@
 class Spiderchart {
-    constructor(_data, _features) {
+    constructor(_data, _features, svg) {
+        this.svg = svg;
         this.data = _data;
         this.features = _features;
         this.initVis();
@@ -10,7 +11,7 @@ class Spiderchart {
 
         vis.width = 700;
         vis.height = 700;
-        vis.svg = d3.select("#spider-chart")
+        vis.svg = d3.select(vis.svg)
             .attr("width", vis.width)
             .attr("height", vis.height);
 
